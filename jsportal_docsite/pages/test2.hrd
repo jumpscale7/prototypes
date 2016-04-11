@@ -1,0 +1,36 @@
+myvar = cool it works
+
+test = 
+    ok:1,
+    blue:yes,
+
+llist = 1,2,3
+
+people.1 =
+    this
+    is
+    a
+    test1
+
+people.2 =
+    this
+    is
+    a
+    test2
+
+users.1.descr =
+    this
+    is
+    a
+    test1
+
+users.1.name = myname
+
+users.2.descr =
+    this
+    is
+    a
+    test2
+
+users.2.name = myname2
+

@@ -1,0 +1,37 @@
+template: index.html
+title: Test 2
+
+# array #
+
+Array utilities.
+
+{{myvar}}
+{{test.ok}}
+{{test.blue}}
+
+{% for user in users %}
+  {{ user.name }}
+  {{ user.descr }}
+{% endfor %}
+
+## append(arr1, arr2):Array
+
+Appends an array to the end of the other.
+The first array will be modified and will contain the appended items.
+
+See: [`union()`](#union), [`combine()`](#combine)
+
+```js
+var foo = ['a', 'b'],
+    bar = ['b', 'd'];
+
+append(foo, bar); // ['a', 'b', 'b', 'd']
+```
+
+```
+// jinja2 with markdown :)
+This is a [link to the homepage]({{ url_for('portal.render_page')}})
+```
+
+This is a [link to the homepage]({{ url_for('portal.render_page')}})
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{ page.title }}</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/stylish-portfolio.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/pygments.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/starter-template.css') }}" rel="stylesheet">    
+    <link href="{{ url_for('static', filename='font-awesome-4.1.0/css/font-awesome.min.css') }}" rel="stylesheet">
+  </head>
+  <body>
+    
+    {% include "partials/_nav.html" %}
+
+
+    {% block body %}{% endblock %}
+
+    {% block js %}
+      <!-- jQuery -->
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+    {% endblock js %}
+
+  </body>
+</html>
